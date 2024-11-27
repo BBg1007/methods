@@ -8,7 +8,7 @@ public class Main {
 
         System.out.println("Задача №1");
         System.out.println();
-        checkLeapYear((short) 1704);
+        checkLeapYear((short) 1600);
         System.out.println();
 
         //Task2
@@ -27,12 +27,12 @@ public class Main {
 
     public static void checkLeapYear(short year) {
         short yearPassed = (short) (year - 1584);
-        if ((yearPassed > 0)&&(yearPassed%4==0)&&(yearPassed%100!=0)) {
+        if ((yearPassed > 0)&&(yearPassed%4==0)&&(year%100!=0)) {
             System.out.println(year + " год является высокосным.");
 
 
         }
-        else if ((yearPassed > 0)&&yearPassed%400==0){
+        else if ((yearPassed > 0)&&year%400==0){
             System.out.println(year + " год является высокосным.");
 
         }
@@ -46,13 +46,13 @@ public class Main {
 
     public static void suggestRelevantVersion(byte clientOS, int clientDeviceYear) {
         int currentYear = LocalDate.now().getYear();
-        if (clientOS == 1 && (clientDeviceYear - currentYear) >= 0) {
+        if (clientOS == 1 && (clientDeviceYear - currentYear) == 0) {
             System.out.println("Установите версию приложения для Android по ссылке.");
         }
         else if (clientOS == 1 && (clientDeviceYear - currentYear) < 0) {
             System.out.println("Установите облегченную версию приложения для Android по ссылке.");
         }
-        else if (clientOS != 1 && (clientDeviceYear - currentYear) >= 0){
+        else if (clientOS != 1 && (clientDeviceYear - currentYear) == 0){
             System.out.println("Установите версию приложения для iOS по ссылке.");
         }
         else {
