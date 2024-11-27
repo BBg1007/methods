@@ -8,7 +8,7 @@ public class Main {
 
         System.out.println("Задача №1");
         System.out.println();
-        checkLeapYear((short) 1600);
+        checkLeapYear((short) 1700);
         System.out.println();
 
         //Task2
@@ -26,17 +26,16 @@ public class Main {
     }
 
     public static void checkLeapYear(short year) {
-        short yearPassed = (short) (year - 1584);
-        if ((yearPassed > 0)&&(yearPassed%4==0)&&(year%100!=0)) {
+        if ((year > 1584)&&(year%4==0)&&(year%100!=0)) {
             System.out.println(year + " год является высокосным.");
 
 
         }
-        else if ((yearPassed > 0)&&year%400==0){
+        else if ((year > 1584)&&year%400==0){
             System.out.println(year + " год является высокосным.");
 
         }
-        else if (yearPassed<0) {
+        else if (year<1584) {
             System.out.println("Год должен быть больше, чем 1584 (в котором был введен високосный год).");
         }
         else {
