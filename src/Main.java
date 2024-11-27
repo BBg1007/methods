@@ -21,7 +21,8 @@ public class Main {
         //Task3
         System.out.println("Задача №3");
         System.out.println();
-        calculateDeliveryTime((byte) 97);
+        byte deliveryTime = calculateDeliveryTime((byte) 17);
+        System.out.println(deliveryTime);
 
     }
 
@@ -60,23 +61,17 @@ public class Main {
 
     }
 
-    public static void calculateDeliveryTime(byte deliveryDistance) {
-        byte deliveryDays;
+    public static byte calculateDeliveryTime(byte deliveryDistance) {
+        byte deliveryDays=0; // Возвращает 0 если нет доставки.
         if (deliveryDistance<=20&&deliveryDistance>=0){
             deliveryDays=1;
-            System.out.println("Потребуется дней: "+deliveryDays);
         }
         else if (deliveryDistance>20&&deliveryDistance<=60) {
             deliveryDays=2;
-            System.out.println("Потребуется дней: "+deliveryDays);
         } else if (deliveryDistance>60&&deliveryDistance<=100) {
             deliveryDays=3;
-            System.out.println("Потребуется дней: "+deliveryDays);
         }
-        else {
-            System.out.println("К сожалению, доставки нет.");
-        }
-
+        return deliveryDays;
     }
 
 
